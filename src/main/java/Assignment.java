@@ -10,18 +10,29 @@ public class Assignment {
      */
     public static double calculateMovieNight() {
         // TODO: Implement this method
-        return 0.0;
+        double adultTiks = 2 * 12.50;
+        double childTiks = 3 * 8.00;
+        double popcorn = 1 * 7.25;
+        double movieCost = adultTiks + childTiks + popcorn;
+        return movieCost;
+
     }
 
     /**
      * Exercise 2a: Check if someone can rent a car
      * Most rental companies require drivers to be 25 or older
-     * @param age the person's age
-     * @return true if age is 25 or older, false otherwise
+     * 
+     * *@param age the person's age
+     * *@return true if age is 25 or older, false otherwise
      */
     public static boolean canRentCar(int age) {
         // TODO: Implement this method
-        return false;
+        if (age >= 25) {
+            return true;
+        } else {
+            return false;
+        } 
+
     }
 
     /**
@@ -32,7 +43,11 @@ public class Assignment {
      */
     public static boolean isValidPasswordLength(String password) {
         // TODO: Implement this method
-        return false;
+        if (password.length() >= 8) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -44,8 +59,14 @@ public class Assignment {
      */
     public static boolean needsOilChange(int mileage, int lastChangeMileage) {
         // TODO: Implement this method
-        return false;
-    }
+       int mileageDif = mileage - lastChangeMileage;
+       if (mileageDif >= 5000) {
+        return true;
+       } else {
+       return false;
+       }
+        }
+       
 
     /**
      * Exercise 3: Get message for divisible by 3
@@ -54,7 +75,12 @@ public class Assignment {
      */
     public static String getDivisibleByThreeMessage(int number) {
         // TODO: Implement this method
-        return "";
+        if (number % 3 == 0) {
+           return "Divisible by 3";
+        } else {
+            return "";
+        }
+        
     }
 
     /**
@@ -66,7 +92,15 @@ public class Assignment {
      */
     public static String getLeapYearMessage(int year) {
         // TODO: Implement this method
-        return "";
+        if (year % 400 == 0){
+            return "Leap Year";
+        } else if (year % 100 == 0) {
+            return "Not Leap Year";
+        } else if (year % 4 == 0) {
+            return "Leap Year";
+        } else {
+            return "Not Leap Year";
+        }
     }
 
     /**
@@ -77,6 +111,14 @@ public class Assignment {
      */
     public static String getTicketPriceCategory(int age) {
         // TODO: Implement this method
-        return "";
+        if (age >= 0 && age < 5) {
+           return "Free";
+        } else if (age >= 5 && age <= 12) {
+           return "Child Price";
+        } else if (age >= 13 && age <= 21) {
+            return "Student Price";
+        } else {
+            return "Adult Price";
+        }
     }
 }
